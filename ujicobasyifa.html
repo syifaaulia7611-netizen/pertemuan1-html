@@ -1,0 +1,453 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Syifa's Little World 🎀</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* =========================
+           BODY / BACKGROUND
+        ========================= */
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, #ffffff 0 2%, transparent 3%),
+                radial-gradient(circle at 90% 10%, #ffffff 0 2%, transparent 3%),
+                linear-gradient(
+                    135deg,
+                    #ffeaf2,
+                    #ffd6e7,
+                    #f8dfff
+                );
+
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        /* =========================
+           HIASAN BULAT-BULAT
+           DI BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            width: 250px;
+            height: 250px;
+            background: #ffc4da;
+            border-radius: 50%;
+            position: absolute;
+            top: -100px;
+            left: -80px;
+
+            opacity: 0.45;
+        }
+        body::after {
+            content: "";
+            width: 220px;
+            height: 220px;
+            background: #e7c7ff;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -90px;
+            right: -70px;
+            opacity: 0.45;
+        }
+        /* =========================
+           HIASAN HATI
+        ========================= */
+        .heart {
+            position: absolute;
+            color: #ff91b8;
+            font-size: 30px;
+            animation: floating 3s ease-in-out infinite;
+            z-index: 1;
+        }
+        .heart1 {
+            top: 12%;
+            left: 15%;
+        }
+        .heart2 {
+            top: 20%;
+            right: 15%;
+
+            animation-delay: 1s;
+        }
+        .heart3 {
+            bottom: 18%;
+            left: 20%;
+
+            animation-delay: 2s;
+        }
+        .heart4 {
+            bottom: 15%;
+            right: 20%;
+
+            animation-delay: 1.5s;
+        }
+
+        /* =========================
+           ANIMASI HATI
+        ========================= */
+
+        @keyframes floating {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .card {
+            width: 380px;
+
+            padding: 35px 30px;
+
+            background: rgba(255, 255, 255, 0.82);
+
+            border: 2px solid rgba(255, 182, 210, 0.8);
+
+            border-radius: 35px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 50px rgba(255, 126, 170, 0.25);
+
+            backdrop-filter: blur(10px);
+
+            position: relative;
+
+            z-index: 5;
+
+            transition: 0.4s;
+        }
+
+
+        /* Card naik saat disentuh mouse */
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 25px 60px rgba(255, 126, 170, 0.35);
+        }
+
+
+        /* =========================
+           LABEL KECIL
+        ========================= */
+
+        .hello {
+            display: inline-block;
+
+            background: #fff0f6;
+
+            color: #e987aa;
+
+            padding: 7px 15px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            margin-bottom: 18px;
+
+            border: 1px solid #ffd0e1;
+        }
+
+
+        /* =========================
+           FOTO
+        ========================= */
+
+        .foto {
+            width: 155px;
+            height: 155px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid #ffb4d0;
+
+            padding: 5px;
+
+            background: white;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 8px 20px rgba(255, 126, 170, 0.2);
+
+            transition: 0.4s;
+        }
+
+
+        .foto:hover {
+            transform: scale(1.08) rotate(3deg);
+
+            box-shadow:
+                0 12px 25px rgba(255, 126, 170, 0.3);
+        }
+
+
+        /* =========================
+           NAMA
+        ========================= */
+
+        h1 {
+            color: #ef78a4;
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           SUBTITLE
+        ========================= */
+
+        .subtitle {
+            color: #c77d9b;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           DESKRIPSI
+        ========================= */
+
+        .description {
+            color: #777;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================
+           TOMBOL
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .button {
+            text-decoration: none;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #ff9fc4,
+                #f58caf
+            );
+
+            padding: 11px 18px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            box-shadow:
+                0 7px 15px rgba(255, 126, 170, 0.2);
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+            transform: translateY(-3px) scale(1.05);
+
+            box-shadow:
+                0 10px 20px rgba(255, 126, 170, 0.3);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 25px;
+
+            color: #d28aa7;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE UNTUK HP
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .card {
+                width: 90%;
+
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .foto {
+                width: 135px;
+                height: 135px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HIASAN HATI
+    ========================= -->
+
+    <div class="heart heart1">♡</div>
+
+    <div class="heart heart2">♡</div>
+
+    <div class="heart heart3">♡</div>
+
+    <div class="heart heart4">♡</div>
+
+
+    <!-- =========================
+         CARD UTAMA
+    ========================= -->
+
+    <div class="card">
+
+
+        <!-- Tulisan kecil -->
+
+        <div class="hello">
+            ✨ welcome to my little world ✨
+        </div>
+
+
+        <!-- FOTO KAMU -->
+
+        <img
+            src="foto.jpg"
+            alt="Foto Syifa"
+            class="foto"
+        >
+
+
+        <!-- NAMA -->
+
+        <h1>
+            Hi, I'm Syifa! 🎀
+            (
+                
+            )
+        </h1>
+
+
+        <!-- PROFESI / STATUS -->
+
+        <p class="subtitle">
+            Digital Business Student ♡
+        </p>
+
+
+        <!-- DESKRIPSI -->
+
+        <p class="description">
+            Haiii! Aku Syifa 🌷
+            <br>
+            Aku sedang belajar Bisnis Digital,
+            coding, dan mencoba banyak hal baru.
+            <br>
+            <br>
+            Little steps, big dreams ✨
+        </p>
+
+
+        <!-- TOMBOL -->
+
+        <div class="buttons">
+
+            <a href="#" class="button">
+                About Me 💌
+            </a>
+
+            <a href="#" class="button">
+                My Hobby 🎀
+            </a>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <p class="footer">
+            made with ♡ by Syifa
+        </p>
+
+
+    </div>
+
+
+</body>
+
+</html>
+```
