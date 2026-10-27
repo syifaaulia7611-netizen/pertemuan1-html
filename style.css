@@ -7,7 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: pink;
+    color: black;
     background-color: #f4f7f6;
 }
 
@@ -50,10 +50,11 @@ text-decoration: none;
 padding: 6px 14px;
 margin:  0 2px;
 border-radius: 4px;
-transition: all 0;
+transition: all 0.3 eas;
 }
 
-nav a:hover, nav :active{
-    background-color: rgba(255, 255, 255, 0.25);
+nav a:hover, 
+nav a.active{
+    background-color: rgb(163,223,181);
     font-weight: bold;
 }
