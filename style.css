@@ -8,8 +8,8 @@
     --white : #FFFFFF;
     --text-muted : #666666;
     --border-color : #E0E0E0;
-    --shadow-soft : 0 4px 12px rgba (0, 0, 0.18);
-    --shadow-hover: 0 8px 24px rgba (0, 0, 0,0.15);
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
     --transition-fast: all 0.3s ease;
 }
 
@@ -17,7 +17,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body {
@@ -70,11 +70,12 @@ border-radius: 4px;
 transition: var(--transition-fast);
 }
 
-nav a:hover, 
+nav a:hover,
 nav a.active {
-    background-color: rgba (255, 255, 255, 0.25);
+    background-color:rgba(255, 255, 255, 0.25);
     font-weight: bold;
 }
+
 main {
     padding: 40px 0;
 }
@@ -84,21 +85,22 @@ main {
 }
 
 .section-title {
-    text-align: center;
-    font-size: 1.8;
-    color : var(--Secondary-Color);
+    text-align:center;
+    font-size: 1.8rem;
+    color:var(--Secondary-Color);
     margin-bottom: 5px;
 }
 
 .section-subtitle {
-    text-align: center;
-    color: var(--text-muted);
+    text-align:center;
+    color:var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 30px;
 }
 
 /* 6. CARD COMPANENT */
 .card-grid {
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
@@ -124,9 +126,31 @@ border: 1px solid var(--border-color);
 }
 
 .card-img {
-    width: 100px;
-    height: 190px;
+    width: 100%;
+    height: 220px;
     object-fit: cover;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.card-features {
+    list-style-position: inside;
+    padding: 0;
+    margin: 12px 0 18px;
+    text-align: center;
+    line-height: 1.8;
+}
+.card-features li {
+    margin-bottom: 5px;
 }
 
 .card-body {
@@ -140,4 +164,37 @@ border: 1px solid var(--border-color);
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-bottom: 15px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 9px 15px;
+    border-radius: 5px;
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background-color: var(--Primary-Dark);
+}
+
+.pricing-card .badge,
+.pricing-card .badge-featured {
+    display: inline-block;
+    color: #008080;
+    background-color: #e0f2f1;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.pricing-card .card-title {
+    color: #005A5A;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
 }
